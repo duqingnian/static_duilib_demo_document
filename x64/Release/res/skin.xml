@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window caption="0,0,0,36" roundcorner="0,0" size="600,250" sizebox="6,6,6,6" mininfo="80,60">
+	<Font id="0" name="微软雅黑" size="12" bold="false" default="true" shared="true" />
+	<Font id="1" name="微软雅黑" size="12" bold="true" shared="true" />
+	<Default name="Button" value="bkcolor=&quot;#FF107c10&quot; textcolor=&quot;#FFFFFFFF&quot;" shared="true" />
+	<Default name="Edit" value="bordersize=&quot;1&quot; bordercolor=&quot;#FF107c10&quot;" shared="true" />
+	<Default name="VScrollBar" value="thumbcolor=&quot;#FFFF0000&quot;" shared="true" />
+	<VerticalLayout bkcolor="#FFFFFFFF" bordersize="1" bordercolor="#FF107c10">
+		<HorizontalLayout name="header" height="36" bkcolor="#FF107c10">
+			<HorizontalLayout>
+				<Control width="10"/>
+				<Label name="apptitle" text="https://duilib.dev Resource as dll - version:3" font="1" textcolor="#FFFFFFFF" />
+			</HorizontalLayout>
+			<HorizontalLayout height="25" width="96">
+				<!-- 最小化 -->
+				<Button name="minbtn" tooltip="最小化" height="18" width="26"
+        normalimage="minimize.png"
+        hotimage="minimize_h.png"
+        pushedimage="minimize_p.png" />
+				<!-- 最大化 -->
+				<Button name="maxbtn" tooltip="最大化" height="18" width="25"
+        normalimage="maximize.png"
+        hotimage="maximize_h.png"
+        pushedimage="maximize_p.png" />
+				<!-- 还原 -->
+				<Button name="restorebtn" visible="false" tooltip="恢复" height="18" width="25"
+        normalimage="restore.png"
+        hotimage="restore_h.png"
+        pushedimage="restore_p.png" />
+				<!-- 关闭 -->
+				<Button name="closebtn" tooltip="关闭" height="18" width="43"
+        normalimage="close.png"
+        hotimage="close_h.png"
+        pushedimage="close_p.png" />
+			</HorizontalLayout>
+		</HorizontalLayout>
+		<VerticalLayout name="body" padding="2,0,2,2">
+			<HorizontalLayout padding="10,10,10,10" childpadding="10">
+				<VerticalLayout width="auto" childpadding="10">
+					<Control height="20"/>
+					<!-- 1) 一个按钮：点击后弹窗（事件由你在 C++ 中实现） -->
+					<Button name="btnPopup" text="弹窗显示时间" width="120" height="30" />
+					<!-- 2) 输入框 + 按钮 + 文本：点击按钮后把输入框文字显示到文本控件 -->
+					<HorizontalLayout childpadding="8" height="30">
+						<Edit name="editInput" width="240" height="30" prompttext="在这里输入..." />
+						<Button name="btnApply" text="应用到文本" width="120" height="30" />
+						<Label name="lblOutput" text="输出会显示在这里" height="30" valign="vcenter" />
+					</HorizontalLayout>
+					<!-- 3) 一个按钮：点击后清空输入框和文本 -->
+					<Button name="btnClear" text="清空输入和文本" width="120" height="30" />
+				</VerticalLayout>
+			</HorizontalLayout>
+		</VerticalLayout>
+	</VerticalLayout>
+</Window>
